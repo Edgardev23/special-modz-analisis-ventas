@@ -7,23 +7,25 @@ además de "qué hace", explica "por qué se hace así".
 Archivos del proyecto:
 
 ```
-limpieza/
+src/
 ├── limpieza_clientes.py   ← el programa principal (orquesta todo)
 ├── diccionario_tipos.py   ← DATOS: reglas para clasificar "TIPO DE VENTA"
 ├── typos_ciudades.py      ← DATOS: correcciones de ciudad
-├── EXPLICACION.md         ← este archivo
-└── salida/                ← se genera al correr el script
+└── salida/                ← se genera al correr el script (fuera del repo)
     ├── especialmodz_clientes_limpio.csv
     ├── reporte_incidencias.md
     ├── tipos_sin_clasificar.csv
     └── correcciones_ciudad.csv
 ```
 
-Para ejecutarlo:
+> Nota: este documento se escribió cuando los scripts vivían en `limpieza/`;
+> hoy están en `src/` y la salida limpia, ya anonimizada, se publica en
+> `data/processed/`. La lógica que se explica abajo no cambió.
+
+Para ejecutarlo (necesita el Excel original en `data/raw/`):
 
 ```bash
-cd limpieza
-python3 limpieza_clientes.py
+python3 src/limpieza_clientes.py
 ```
 
 No necesita instalar nada (`pip install ...`): usa solo la **librería estándar**

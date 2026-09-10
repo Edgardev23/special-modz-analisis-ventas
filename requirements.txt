@@ -1,0 +1,4 @@
+# El pipeline de limpieza (limpieza/) NO necesita dependencias: solo stdlib.
+# Estas librerías se usan únicamente para el análisis y los gráficos (src/analisis.py).
+pandas>=2.0
+matplotlib>=3.7

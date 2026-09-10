@@ -1,0 +1,71 @@
+{
+  "filas": 7433,
+  "pedidos": 5096,
+  "clientes": 4276,
+  "ingresos_total": 1152812212,
+  "fecha_min": "2016-01-01",
+  "fecha_max": "2025-11-10",
+  "ticket_medio_pedido": 226219,
+  "ticket_mediano_pedido": 175000,
+  "mix_lineas": {
+    "MODIFICACION PROPIA": 3092,
+    "SERVICIO TECNICO": 2849,
+    "COMPRA DE CONTROL": 1492
+  },
+  "mix_ingresos": {
+    "COMPRA DE CONTROL": 246783482,
+    "MODIFICACION PROPIA": 581754174,
+    "SERVICIO TECNICO": 324274556
+  },
+  "ticket_mediano_por_tipo": {
+    "SERVICIO TECNICO": 95000,
+    "MODIFICACION PROPIA": 150000,
+    "COMPRA DE CONTROL": 153917
+  },
+  "bogota_share_pedidos": 0.7422,
+  "ciudades_distintas": 196,
+  "top_ciudades": {
+    "BOGOTA": 3782,
+    "MEDELLIN": 260,
+    "CALI": 117,
+    "BARRANQUILLA": 66,
+    "PEREIRA": 53,
+    "CARTAGENA": 44,
+    "VILLAVICENCIO": 41,
+    "BUCARAMANGA": 36,
+    "ENVIGADO": 32,
+    "MANIZALES": 28
+  },
+  "clientes_recurrentes": 573,
+  "share_recurrentes": 0.134,
+  "ingresos_recurrentes_share": 0.2248,
+  "pedidos_multitipo_share": 0.3968,
+  "combos_top": {
+    "SERVICIO TECNICO": 1716,
+    "MODIFICACION PROPIA": 1156,
+    "COMPRA DE CONTROL + MODIFICACION PROPIA": 932,
+    "MODIFICACION PROPIA + SERVICIO TECNICO": 741,
+    "COMPRA DE CONTROL + MODIFICACION PROPIA + SERVICIO TECNICO": 239,
+    "COMPRA DE CONTROL": 202,
+    "COMPRA DE CONTROL + SERVICIO TECNICO": 110
+  },
+  "estacional_mes": {
+    "Ene": 63.5,
+    "Feb": 57.0,
+    "Mar": 50.2,
+    "Abr": 56.5,
+    "May": 66.2,
+    "Jun": 69.5,
+    "Jul": 77.8,
+    "Ago": 62.0,
+    "Sep": 66.2,
+    "Oct": 78.5,
+    "Nov": 84.5,
+    "Dic": 105.5
+  },
+  "pico_mes": "Dic",
+  "valle_mes": "Mar",
+  "valor_pedido_p25": 95000,
+  "valor_pedido_p75": 330000,
+  "valor_pedido_p90": 450000
+}

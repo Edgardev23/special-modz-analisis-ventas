@@ -1,0 +1,21 @@
+# --- datos con información personal (NO publicar) ---------------------------
+# La fuente y los intermedios contienen nombres reales de clientes.
+data/raw/*
+!data/raw/README.md
+src/salida/
+*.xlsx
+
+# --- entorno / artefactos ---------------------------------------------------
+.venv/
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+.ipynb_checkpoints/
+
+# --- se regeneran con los scripts (opcional versionar) ---------------------
+# data/processed/  -> SÍ se versiona (ya está anonimizado)
+# reports/figuras/ -> SÍ se versiona (se muestran en el README)
+dashboard/_artifact.html
+
+.claude/settings.local.json

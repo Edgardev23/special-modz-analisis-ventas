@@ -4,7 +4,7 @@
 
 Proyecto de datos de punta a punta sobre la base de clientes de **SpecialModz**,
 un taller colombiano de **modificación y reparación de controles de videojuego**.
-Parte de una hoja de Excel de 8 años llena de texto libre y termina en un
+Parte de archivos de Excel con datos desorganizados que termina en un
 dataset limpio, un set de métricas y un tablero de recomendaciones de negocio.
 
 > **Privacidad.** La fuente tiene ~4.300 nombres reales de clientes. Nada de eso

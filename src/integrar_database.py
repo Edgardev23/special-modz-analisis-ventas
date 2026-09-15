@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Integra el CSV limpio real (Tarea 1) y el CSV sintético (Tarea 2) en un solo
+Integra el CSV limpio real (Tarea 1) y los CSV sintéticos (Tarea 2: cola
+2024-07→2025-11; Tarea 5: relleno del hueco 2021-03→2022-12) en un solo
 archivo `specialmodz_database.csv`, añadiendo un código identificador de cliente.
 
 - Un "cliente único" se identifica por su nombre normalizado (sin tildes, en
@@ -17,6 +18,7 @@ archivo `specialmodz_database.csv`, añadiendo un código identificador de clien
 
 Entradas : limpieza/salida/especialmodz_clientes_limpio.csv
            limpieza/salida/especialmodz_ventas_sinteticas.csv
+           limpieza/salida/especialmodz_ventas_sinteticas_gap.csv
 Salida   : limpieza/salida/specialmodz_database.csv
            columnas: id_cliente;fecha_compra;nombre_cliente;ciudad;valor_compra;tipo_compra
 Solo librería estándar.
@@ -31,8 +33,9 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parent
 SAL = RAIZ / "salida"
 FUENTES = [
-    SAL / "especialmodz_clientes_limpio.csv",     # reales (Tarea 1)
-    SAL / "especialmodz_ventas_sinteticas.csv",   # sintéticos (Tarea 2)
+    SAL / "especialmodz_clientes_limpio.csv",         # reales (Tarea 1)
+    SAL / "especialmodz_ventas_sinteticas.csv",       # sintéticos (Tarea 2)
+    SAL / "especialmodz_ventas_sinteticas_gap.csv",   # sintéticos (Tarea 5)
 ]
 DESTINO = SAL / "specialmodz_database.csv"
 COLS = ["id_cliente", "fecha_compra", "nombre_cliente",

@@ -99,9 +99,9 @@ def fig_ingresos_mensuales(df):
     ax.plot(s.index, s.values / 1e6, color=AZUL, lw=2)
     ax.fill_between(s.index, s.values / 1e6, color=AZUL, alpha=0.10)
     hueco = (pd.Timestamp("2021-03-01"), pd.Timestamp("2022-12-31"))
-    ax.axvspan(*hueco, color=GRID, alpha=0.6, lw=0)
+    ax.axvspan(*hueco, color=GRID, alpha=0.25, lw=0)
     ax.text(pd.Timestamp("2022-01-15"), ax.get_ylim()[1] * 0.9,
-            "sin registros\n2021-03 a 2022-12", ha="center", va="top",
+            "relleno simulado\n2021-03 a 2022-12", ha="center", va="top",
             fontsize=9, color=TINTA2)
     ax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f"${x:,.0f}M"))
     ax.set_title("Ingresos mensuales", fontweight="bold", loc="left")
@@ -113,8 +113,8 @@ def fig_ingresos_mensuales(df):
 def fig_anual(df, ped):
     g = ped.groupby("anio").agg(pedidos=("valor", "size"),
                                 ingresos=("valor", "sum"))
-    g = g.reindex(range(g.index.min(), g.index.max() + 1), fill_value=0)  # muestra 2022 = 0
-    parciales = {2016, 2017, 2021, 2022, 2024, 2025}   # años sin cobertura completa
+    g = g.reindex(range(g.index.min(), g.index.max() + 1), fill_value=0)
+    parciales = {2016, 2017, 2021, 2022, 2024, 2025}   # años con datos simulados
     fig, (a1, a2) = plt.subplots(1, 2, figsize=(11, 4))
     colores = [GRID if y in parciales else AZUL for y in g.index]
     a1.bar(g.index.astype(str), g["pedidos"], color=colores)
@@ -125,8 +125,8 @@ def fig_anual(df, ped):
     a2.set_title("Ingresos por año", fontweight="bold", loc="left")
     for a in (a1, a2):
         a.tick_params(axis="x", rotation=45)
-    fig.text(0.5, -0.03, "gris = año con cobertura parcial o incompleta "
-             "(2016-2017 arranque, 2021 corte, 2024-2025 simulación)",
+    fig.text(0.5, -0.03, "gris = año con cobertura parcial o con datos simulados "
+             "(2016-2017 arranque, 2021-2022 relleno de hueco, 2024-2025 cola simulada)",
              ha="center", fontsize=9, color=TINTA2)
     _guardar(fig, "02_pedidos_ingresos_anuales.png")
 

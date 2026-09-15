@@ -1,6 +1,6 @@
 # Reporte de incidencias — limpieza base de datos clientes
 
-- Generado: 2026-09-10 17:59
+- Generado: 2026-09-15 15:55
 - Archivo fuente: `Doc/1.Base de Datos Clientes 2017.xlsx`, hoja `Hoja1`
 
 ## 1. Cuadre de filas
@@ -119,7 +119,7 @@ Suma de `valor_compra` en el CSV final: **931,453,712**. Por decisión de Edgar 
 
 ## 3. Fechas fuera del rango esperado (se conservan)
 
-- fila 2758: fecha fuera de rango [2016-01-01..2026-09-10]: 2003-01-05 (original '37626')
+- fila 2758: fecha fuera de rango [2016-01-01..2026-09-15]: 2003-01-05 (original '37626')
 
 ## 4. Valores de venta con formato inusual (se conservan)
 

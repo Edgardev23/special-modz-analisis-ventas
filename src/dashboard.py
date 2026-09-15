@@ -61,7 +61,7 @@ SECCIONES = [
             f"Pico en <b>{M['pico_mes'].lower()}</b> (regalos y prima), valle en "
             f"<b>{M['valle_mes'].lower()}</b> — diciembre ≈ 2× marzo. Repunte secundario "
             "en julio. El domingo el taller casi no opera (0,5%); el martes es el día "
-            "más cargado. <b>Ojo:</b> no hay registros entre 2021-03 y 2022-12."),
+            "más cargado."),
         reco=(
             "Planear inventario y turnos por temporada: reforzar oct–dic, no "
             "sobre-contratar en el primer trimestre. Promoción de temporada baja "
@@ -100,8 +100,8 @@ SECCIONES = [
         hallazgo=(
             f"Solo el <b>{M['share_recurrentes']*100:.0f}%</b> de los clientes vuelve "
             f"(registro), y ese grupo aporta el <b>{M['ingresos_recurrentes_share']*100:.0f}%</b> "
-            "de los ingresos. Es un piso: sin teléfono ni documento en la fuente, y "
-            "con el hueco de 2 años, la recompra real es mayor."),
+            "de los ingresos. Es un piso: sin teléfono ni documento en la fuente, "
+            "la recompra real es mayor."),
         reco=(
             "Capturar teléfono o documento en cada pedido (es el identificador que "
             "falta). Recordatorio de mantenimiento cada 6–12 meses por WhatsApp: "
@@ -208,7 +208,7 @@ BODY = f"""<div class="wrap">
   <div class="banner">
     <span>&#9888;</span>
     <div><b>Cobertura de datos.</b> Registro real 2016-01 → 2024-07-03
-    (sin datos entre 2021-03 y 2022-12) + simulación 2024-07-04 → 2025-11-10.
+    (con relleno simulado entre 2021-03 y 2022-12) + simulación 2024-07-04 → 2025-11-10.
     Las lecturas estructurales se sostienen en los ~4.100 pedidos reales;
     la recurrencia hay que leerla como piso.</div>
   </div>

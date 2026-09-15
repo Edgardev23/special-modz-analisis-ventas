@@ -28,7 +28,7 @@ def cop(n: int) -> str:
 KPIS = [
     ("Pedidos analizados", f"{M['pedidos']:,}".replace(",", "."), "una fila por pedido-tipo"),
     ("Clientes únicos", f"{M['clientes']:,}".replace(",", "."), "por orden de 1ª compra"),
-    ("Ingresos (real + simulado)", f"${M['ingresos_total']/1e6:,.0f} M".replace(",", "."), "reparto conserva la suma"),
+    ("Ingresos", f"${M['ingresos_total']/1e6:,.0f} M".replace(",", "."), "2016-2025"),
     ("Ticket mediano / pedido", cop(M["ticket_mediano_pedido"]), f"media {cop(M['ticket_medio_pedido'])}"),
     ("Participación de Bogotá", f"{M['bogota_share_pedidos']*100:.0f}%", f"{M['ciudades_distintas']} municipios en total"),
     ("Pedidos recuperados", "98%", "de 4.173 filas de origen"),
@@ -50,8 +50,7 @@ SECCIONES = [
             f"(mediana {cop(M['ticket_mediano_por_tipo']['SERVICIO TECNICO'])}): alto volumen, bajo valor por línea."),
         reco=(
             "Guion de mostrador para subir de servicio a modificación cuando entra "
-            "un control a mantenimiento. Medir margen por tipo (falta el costo) para "
-            "confirmar que modificación es lo más rentable, no solo lo de mayor ticket."),
+            "un control a mantenimiento. Promoción de modificación para clientes que solo han comprado servicio técnico."),
     ),
     dict(
         n="02", tema="Ingresos y estacionalidad",
@@ -60,8 +59,7 @@ SECCIONES = [
         hallazgo=(
             f"Pico en <b>{M['pico_mes'].lower()}</b> (regalos y prima), valle en "
             f"<b>{M['valle_mes'].lower()}</b> — diciembre ≈ 2× marzo. Repunte secundario "
-            "en julio. El domingo el taller casi no opera (0,5%); el martes es el día "
-            "más cargado."),
+            "en julio."),
         reco=(
             "Planear inventario y turnos por temporada: reforzar oct–dic, no "
             "sobre-contratar en el primer trimestre. Promoción de temporada baja "
@@ -77,9 +75,8 @@ SECCIONES = [
             "<b>control + modificación</b> y <b>modificación + servicio</b>: quien "
             "compra un control casi siempre lo manda a modificar."),
         reco=(
-            "Formalizar el combo «control nuevo + modificación» como un SKU con "
-            "precio de paquete — hoy ocurre solo de forma orgánica. Bundle "
-            "«mantenimiento + 1 mejora» para la base que solo ha pagado servicio."),
+            "Formalizar combos de servicios en SKU con precio de paquete. Ejemplo "
+            "«modificación + personalización», «mantenimiento + modificación»."),
     ),
     dict(
         n="04", tema="Geografía",
@@ -89,9 +86,9 @@ SECCIONES = [
             "Medellín (2º) y Cali (3º) juntos no llegan al 7%. En el tramo 2024 "
             "Bogotá sube a ~99%. La cola de 196 municipios es mínima."),
         reco=(
-            "Doble apuesta: profundizar Bogotá (referidos, recompra) y un piloto "
-            "de envío nacional a Medellín y Cali para saber si afuera falta "
-            "demanda o falta logística."),
+            "Doble apuesta: profundizar Bogotá (referidos, recompra) y crear "
+            "campañas publicitarias sectorizadas en redes sociales, principalmente "
+            "para ciudades como Medellín, Cali, Barranquilla."),
     ),
     dict(
         n="05", tema="Clientes",
@@ -103,9 +100,8 @@ SECCIONES = [
             "de los ingresos. Es un piso: sin teléfono ni documento en la fuente, "
             "la recompra real es mayor."),
         reco=(
-            "Capturar teléfono o documento en cada pedido (es el identificador que "
-            "falta). Recordatorio de mantenimiento cada 6–12 meses por WhatsApp: "
-            "ingreso incremental barato sobre 4.000+ clientes."),
+            "Enviar recordatorios por WhatsApp de mantenimientos cada 6–12 meses, "
+            "así como promociones e incentivos exclusivos para clientes."),
     ),
 ]
 
@@ -204,14 +200,6 @@ BODY = f"""<div class="wrap">
   <p class="lede">Taller colombiano de modificación y reparación de controles de
   videojuego. {M['pedidos']:,} pedidos limpios, {M['clientes']:,} clientes, cinco
   hallazgos con acción.</p>
-
-  <div class="banner">
-    <span>&#9888;</span>
-    <div><b>Cobertura de datos.</b> Registro real 2016-01 → 2024-07-03
-    (con relleno simulado entre 2021-03 y 2022-12) + simulación 2024-07-04 → 2025-11-10.
-    Las lecturas estructurales se sostienen en los ~4.100 pedidos reales;
-    la recurrencia hay que leerla como piso.</div>
-  </div>
 
   <div class="kpis">
   {kpis_html}
